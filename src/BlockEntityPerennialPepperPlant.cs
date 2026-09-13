@@ -63,8 +63,8 @@ namespace PepperMod
             }
 
             string pepperType = GetPepperType();
-            int minYield = ConfigInt("harvestPepperMin", 2);
-            int maxYield = ConfigInt("harvestPepperMax", 4);
+            int minYield = ConfigInt("harvestPepperMin", 6);
+            int maxYield = ConfigInt("harvestPepperMax", 8);
             int quantity = minYield + Api.World.Rand.Next(Math.Max(1, maxYield - minYield + 1));
 
             SpawnItemDrops("vegetable-" + pepperType, quantity);

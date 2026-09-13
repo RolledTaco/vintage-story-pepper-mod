@@ -1,13 +1,21 @@
 # Changelog
 
-## Unreleased
+## Releases
+
+### 0.4.1 - Habanero Visual Update
+
+- Reduced harvest yield from 16-24 to 6-8 peppers for every variety. Seed chances, harvesting time, regrowth, and bundle recipes are unchanged.
+- Replaced the segmented spice bar with a compact rustic pixel-art gauge: weathered iron rim, chipped green/amber/red paint, chunky needle and markings, and a localized current-level label. Uses a fixed low-resolution texture and sharp scaling. Remains visible until spice is empty, including at Extreme. Gameplay and cooldown timing are unchanged by this visual revision.
+- Halved spice cooling to 0.5 heat per real-time second, keeping the five-second grace after each bite. A raw jalapeno now lasts about 55 seconds and full heat about 3 minutes 25 seconds. Warming and Extreme hunger/hydration effects use the new duration while retaining their existing per-second rates and caps.
+- Added optional Hydrate or Diedrate support: Extreme spice drains an extra 0.5 hydration per real-time second until heat drops below Extreme. Server-side, Survival-only, and inactive when the mod or thirst mechanics are disabled. Preserves normal drinking delays, nutrition, and hydration bounds; no required dependency or bundled third-party DLL. Tested against Hydrate or Diedrate 2.5.5.
+- Reduced Habanero fruit size by 20% across plants, loose peppers, and bundles. Slimmed Serrano fruit by 20% in width and depth without shortening it. Preserved stems, attachment points, textures, and gameplay, with adjusted oven and ground positioning and hanging selection bounds.
+- Reworked Habanero fruit into shorter, full-bodied lantern shapes with a broad, uneven lower end instead of a pointed tip, across fruit-bearing plant stages, loose peppers, and all bundle states. The existing bush, leaves, flowers, stalk attachments, and wind settings are unchanged.
+- Added a Habanero-only skin atlas with green unripe fruit, bright orange ripe fruit, flat pixel-painted charred skins, and rusty red-orange dried skins. The charred revision matches the other cooked peppers' texture style and preserves the other three texture quarters pixel-for-pixel. Updated oven positioning and hanging selection bounds without changing recipes, spice, spoilage, or drying times.
+- Renamed all baked peppers to Charred, including portable and hanging bundles. This naming change leaves textures, recipes, gameplay values, and internal baked IDs unchanged for saved-world compatibility.
+- Added native texture-atlas and model regressions for the Habanero rework and refreshed its plant, item, preparation, and bundle previews.
 
 ### 0.4.0 - Serranos
 
-- Reworked Habanero fruit into shorter, full-bodied lantern shapes with a broad, uneven lower end instead of a pointed tip, across fruit-bearing plant stages, loose peppers, and all bundle states. The existing bush, leaves, flowers, stalk attachments, and wind settings are unchanged.
-- Added a Habanero-only skin atlas with green unripe fruit, bright orange ripe fruit, flat pixel-painted charred skins, and rusty red-orange dried skins. The charred revision matches the other cooked peppers' texture style and preserves the other three texture quarters pixel-for-pixel. Updated oven positioning and hanging selection bounds without changing recipes, spice, spoilage, or drying times.
-- Renamed only cooked Habaneros to Charred Habanero, including portable and hanging bundles. Internal baked IDs remain unchanged for saved-world compatibility; other varieties retain their Baked names and textures.
-- Added native texture-atlas and model regressions for the Habanero rework and refreshed its plant, item, preparation, and bundle previews.
 - Completed serranos with all 11 plant states, a taller asymmetric bush, narrow leaves, and slender green fruit attached to their stems.
 - Kept the mature canopy unchanged through harvesting and regrowth, with a matching bare winter skeleton and gently anchored leaf sway.
 - Added a matching 3D picked serrano with inventory, hand, dropped, and centered oven placement.

@@ -246,7 +246,7 @@
       "onDisplayTransform": {
         "translation": {
           "x": 0,
-          "y": -0.44026997827215875,
+          "y": -0.450182982617727,
           "z": 0
         },
         "rotation": {
@@ -279,7 +279,7 @@
       "onDisplayTransform": {
         "translation": {
           "x": 0,
-          "y": -0.44026997827215875,
+          "y": -0.450182982617727,
           "z": 0
         },
         "rotation": {
@@ -311,7 +311,7 @@
       "onDisplayTransform": {
         "translation": {
           "x": 0,
-          "y": -0.44026997827215875,
+          "y": -0.450182982617727,
           "z": 0
         },
         "rotation": {
@@ -344,7 +344,7 @@
       "onDisplayTransform": {
         "translation": {
           "x": 0,
-          "y": -0.449942,
+          "y": -0.4514872364651349,
           "z": 0
         },
         "rotation": {
@@ -377,7 +377,7 @@
       "onDisplayTransform": {
         "translation": {
           "x": 0,
-          "y": -0.449942,
+          "y": -0.4514872364651349,
           "z": 0
         },
         "rotation": {
@@ -409,7 +409,7 @@
       "onDisplayTransform": {
         "translation": {
           "x": 0,
-          "y": -0.449942,
+          "y": -0.4514872364651349,
           "z": 0
         },
         "rotation": {
@@ -701,7 +701,7 @@
     "pepperbundle-raw-habanero": {
       "translation": {
         "x": 0,
-        "y": -0.3345936821004961,
+        "y": -0.36557182068039684,
         "z": 0
       },
       "rotation": {
@@ -719,7 +719,7 @@
     "pepperbundle-baked-habanero": {
       "translation": {
         "x": 0,
-        "y": -0.3345936821004961,
+        "y": -0.36557182068039684,
         "z": 0
       },
       "rotation": {
@@ -737,7 +737,7 @@
     "pepperbundle-dried-habanero": {
       "translation": {
         "x": 0,
-        "y": -0.3345936821004961,
+        "y": -0.36557182068039684,
         "z": 0
       },
       "rotation": {
@@ -755,7 +755,7 @@
     "pepperbundle-raw-serrano": {
       "translation": {
         "x": 0,
-        "y": -0.36482,
+        "y": -0.3696476139535465,
         "z": 0
       },
       "rotation": {
@@ -773,7 +773,7 @@
     "pepperbundle-baked-serrano": {
       "translation": {
         "x": 0,
-        "y": -0.36482,
+        "y": -0.3696476139535465,
         "z": 0
       },
       "rotation": {
@@ -791,7 +791,7 @@
     "pepperbundle-dried-serrano": {
       "translation": {
         "x": 0,
-        "y": -0.36482,
+        "y": -0.3696476139535465,
         "z": 0
       },
       "rotation": {

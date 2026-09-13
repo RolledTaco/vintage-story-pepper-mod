@@ -1,7 +1,6 @@
 using System;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
-using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 
 namespace PepperMod
@@ -9,6 +8,7 @@ namespace PepperMod
     public class SpiceHud : HudElement
     {
         private SpiceState state;
+        private GuiElementSpiceGauge gauge;
         private LoadedTexture vignetteTexture;
         private float redOpacity;
         private float pulseTime;
@@ -30,36 +30,18 @@ namespace PepperMod
                 return;
             }
             if (SingleComposer == null) ComposeMeter();
-            for (int i = 0; i < 3; i++)
-            {
-                var bar = SingleComposer.GetStatbar("spice-" + i);
-                float fill = state.SegmentFill(i);
-                if (Math.Abs(bar.GetValue() - fill) > .0001f) bar.SetValue(fill);
-            }
+            gauge.SetState(state);
             if (!IsOpened()) TryOpen();
         }
 
         private void ComposeMeter()
         {
-            var bounds = ElementBounds.Fixed(0, 0, 252, 42)
+            var bounds = ElementBounds.Fixed(0, 0, GuiElementSpiceGauge.Width, GuiElementSpiceGauge.Height)
                 .WithAlignment(EnumDialogArea.RightBottom).WithFixedAlignmentOffset(-24, -145);
             SingleComposer = capi.Gui.CreateCompo("peppermod-spice", bounds);
-            string[] labels = { "mild", "hot", "extreme" };
-            double[][] colors = { new double[] { .43, .65, .27, 1 }, new double[] { .95, .55, .16, 1 }, new double[] { .83, .18, .14, 1 } };
-            for (int i = 0; i < 3; i++)
-            {
-                SingleComposer.AddStaticText(Lang.Get("peppermod:spice-" + labels[i]),
-                    CairoFont.WhiteSmallText().WithFontSize(14), EnumTextOrientation.Center,
-                    ElementBounds.Fixed(i * 86, 0, 80, 22));
-                SingleComposer.AddStatbar(ElementBounds.Fixed(i * 86, 25, 80, 10), colors[i], false, "spice-" + i);
-            }
-            SingleComposer.Compose();
-            for (int i = 0; i < 3; i++)
-            {
-                var bar = SingleComposer.GetStatbar("spice-" + i);
-                bar.SetValues(0, 0, 1);
-                bar.SetLineInterval(1);
-            }
+            gauge = new GuiElementSpiceGauge(capi, ElementBounds.Fixed(0, 0, GuiElementSpiceGauge.Width, GuiElementSpiceGauge.Height));
+            gauge.SetState(state);
+            SingleComposer.AddInteractiveElement(gauge, "spice-gauge").Compose(false);
         }
 
         public override void OnRenderGUI(float dt)
@@ -116,6 +98,7 @@ namespace PepperMod
             if (IsOpened()) TryClose();
             vignetteTexture?.Dispose();
             vignetteTexture = null;
+            gauge = null;
             base.Dispose();
         }
     }

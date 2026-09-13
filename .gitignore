@@ -28,3 +28,17 @@ src/obj/
 # Vintage Story / VSMC local noise
 VSMC2_Backups/
 *.old
+
+# Local development files removed from GitHub; keep out of future commits
+/tools/
+/tests/
+/docs/
+/art/previews/
+/art/reference/
+/art/source/
+
+# Superseded pepper prototypes and flat item icons
+/assets/peppermod/shapes/block/plant/crop/jalapeno-candidate/
+/assets/peppermod/textures/item/food/vegetable/jalapeno.png
+/assets/peppermod/textures/item/food/vegetable/habanero.png
+/assets/peppermod/textures/item/food/vegetable/serrano.png

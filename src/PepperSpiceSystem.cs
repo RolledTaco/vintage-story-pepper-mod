@@ -71,7 +71,7 @@ namespace PepperMod
             if (state.Heat <= 0 || !float.IsFinite(dt) || dt <= 0) return;
             SpiceState after = state.Cool(dt);
             // Only the part of this tick spent at Hot or Extreme supplies warmth.
-            float warmSeconds = Math.Clamp(state.CoolingDelay + state.Heat - SpiceState.HotThreshold, 0, dt);
+            float warmSeconds = state.WarmSeconds(dt);
             var temperature = player.GetBehavior<EntityBehaviorBodyTemperature>();
             if (temperature != null && state.Level >= SpiceLevel.Hot)
             {
@@ -90,6 +90,7 @@ namespace PepperMod
                     if (float.IsFinite(current) && current > 0) hunger.Saturation = Math.Max(0, current - hungerDrain);
                 }
             }
+            HydrateOrDiedrateCompatibility.Drain(player, state.HydrationDrain(dt));
             if (after.Heat != state.Heat || after.CoolingDelay != state.CoolingDelay) WriteState(player, after);
         }
 
